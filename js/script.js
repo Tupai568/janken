@@ -82,6 +82,7 @@ Seleksi.SeleksiTag[0].addEventListener("click", () => {
             //Menjalankan Perulangan Computer
             const p = elment.src.split("/"); //Mengambil Src Dari Gambar HTML, Lalu Merubahnya Menjadi Array Dengan Pemisah /
             const pOne = p[4].split("."); //Mengambil Data Dari Variable p Dengan Index 4,  Lalu Merubahnya Menjadi Array Dengan Pemisah .
+console.info(Result[0].toLowerCase());
             if (pOne[0] == Result[0].toLowerCase()) {
               console.info(pOne[0]);
               console.info(Result[0].toLowerCase());
