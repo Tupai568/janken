@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+:root {
+  --bg-color: rgb(39, 38, 38);
+  --bg-primary: rgb(50, 35, 63);
+  --text-prymary: rgb(16, 255, 255);
+  --color-primary: rgb(243, 174, 1);
+}
+
+section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem 9%;
+  box-sizing: border-box;
+}
+
+#header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-color);
+}
+
+.navbar {
+  letter-spacing: 1rem;
+  font-size: 2rem;
+  color: rgb(94, 252, 92);
+  text-shadow: 0 0 10px var(--text-prymary);
+  margin-bottom: 2rem;
+}
+
+.container {
+  width: 30rem;
+  height: 40rem;
+  position: relative;
+  animation: run 1s infinite;
+  background: linear-gradient(rgb(80, 29, 11), rgb(146, 76, 1), rgb(55, 2, 2));
+  border: 3px solid var(--bg-color);
+  border-radius: 1rem;
+}
+
+@keyframes run {
+  0% {
+    box-shadow: 0 -5px 20px cyan;
+  }
+  50% {
+    box-shadow: 5px 0 20px cyan;
+  }
+  70% {
+    box-shadow: 0 5px 20px cyan;
+  }
+  100% {
+    box-shadow: -5px 0 20px cyan;
+  }
+}
+
+.computer,
+.player {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow-y: hidden;
+  text-align: center;
+  color: var(--color-primary);
+}
+
+.setcom {
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top: -30%;
+  border-radius: 50%;
+  background: var(--bg-color);
+}
+
+.setcom p {
+  margin-top: 45%;
+}
+
+.setplayer {
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  bottom: -30%;
+  border-radius: 50%;
+  background: var(--bg-color);
+}
+
+.setplayer p {
+  margin-top: 10%;
+}
+
+.tengah {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+  height: 0.3rem;
+}
+
+.tengah button {
+  width: 4rem;
+  height: 2rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--color-primary);
+  text-shadow: 0 0 5px black;
+  background: var(--bg-color);
+  border-radius: 0.5rem;
+  z-index: 1;
+}
+
+.tengah button:hover {
+  transform: scale(1.3);
+}
+
+.kartu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 13rem;
+  height: 4rem;
+  position: absolute;
+  bottom: 30%;
+}
+
+.janken {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.5rem;
+  background: url("../image/kartu.png");
+  background-size: 100%;
+}
+
+.janken .gambar,
+.janken .gambarcom {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  filter: border(5px solid rebeccapurple);
+  filter: drop-shadow(0 0 10px black);
+  opacity: 0;
+  transition: opacity 1s ease, height 1s ease;
+}
+
+.computer .janken {
+  margin-top: -6rem;
+}
+
+.computer .janken .gambarcom {
+  transform: rotate(180deg);
+}
+
+.janken .gambar.disab {
+  pointer-events: none;
+}
+
+.MainLagi {
+  position: absolute;
+  right: 25%;
+  width: 5rem;
+  height: 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background: var(--color-primary);
+  border-radius: 0.4rem;
+  display: none;
+}
+
+@media screen and (max-width: 1400px) {
+  .MainLagi {
+    right: 15%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .MainLagi {
+    right: 5%;
+  }
+}
+
+@media screen and (max-width: 745px) {
+  .MainLagi {
+    top: 0;
+    right: inherit;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 70%;
+  }
+
+  .MainLagi {
+    top: 3%;
+  }
+
+  .setcom {
+    font-size: 2rem;
+  }
+
+  .setcom p {
+    margin-top: 40%;
+  }
+
+  .setplayer {
+    font-size: 2rem;
+  }
+
+  .tengah button {
+    width: 5rem;
+    height: 4rem;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  html {
+    font-size: 63%;
+  }
+}
